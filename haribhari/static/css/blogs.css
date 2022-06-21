@@ -1,0 +1,44 @@
+.head{
+  text-align: center;
+}
+
+.head h1{
+  font-family:serif;
+  font-size: 200px;
+  margin-bottom: 5%;
+}
+
+.blog-item{
+  border-radius:20px;
+  background-color:white;
+  text-align:center;
+  margin-bottom:2%;
+  padding: 2%;
+  box-sizing: border-box;
+}
+
+.blog-item img{
+  width:50%;
+  border-radius:10px;
+  margin-top:5%;
+  margin-bottom:5%;
+}
+
+.blog-item h3{
+  font-size:490%;
+  color:blue;
+}
+
+.blog-item p{
+  font-size:210%;
+}
+
+.blog_item .author_name{
+  font-size:140%;
+}
+
+@media (max-width:786px) {
+  .head h1{
+    font-size: 100px;
+  }
+}

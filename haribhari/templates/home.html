@@ -1,0 +1,112 @@
+{% extends 'base_new.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<section id="About">
+<div class=my_content>
+<hr class=line height=1>
+<div class=container>
+<div class="About_Us" style="width:100%; margin:5% 0%;">
+<div class="blue">
+<div class="container-fluid1">
+<br id=About_Us>
+<h2> We all dream for a Hari-Bhari Duniya</h2>
+<div class=row>
+<div class=col-sm-6>
+<img src="{% static 'Images/Logo-circle.png'%}">
+</div>
+<div class=col-sm-6>
+<p>We strive to make that dream come true. The aim of Hari Bhari is as simple as finding plastic in a store. As our name, "Hari Bhari", meaning a greener world, suggests, we aspire to rejevuante our planet's greenery by eliminating the problem of plastic lingering around in our surroundings. We are a group of mere teenagers who strive for a bigger change by recycling plastic waste. Hari Bhari delivers the opportunity to stand up and make a difference right at your doorstep. All you have to do is collect the milk pouches delivered to your house and store them rightly. Recycling them? Don't fluster, Hari Bhari got your back. We aim to collect plastic from all over the world and get it recycled. By filling the <a href="#">collector's form</a>, you can <a href="#">become a member</a> of <a href="#the_Team">our heroes squad</a>! When in doubt, <a href="#">contact us</a>. Let's recycle our misdeeds!
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class=arrow-down>
+<a href="#carouselExampleCaptions"><img src="{% static 'Images/arrow.png'%}"></a>
+</div>
+<br>
+<br>
+<h1 class="carousel_heading">What's New?</h1>
+  <div id="carouselExampleCaptions" class="carousel slide text-center" data-bs-ride="false">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{ first_post.blog_header_image.url }}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>{{ first_post.blog_head| safe }}</h3>
+          <p>{{ first_post.blog_summary| safe }}</p>
+          <br>
+          <button type=button class="btn btn-default" onclick='window.location.href="{% url 'blog-full' first_post.pk %}"'>Read More</button>
+          <br>
+          <br>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{ second_post.blog_header_image.url }}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>{{ second_post.blog_head| safe }}</h3>
+          <p>{{ second_post.blog_summary| safe }}</p>
+          <br>
+          <button type=button class="btn btn-default" onclick='window.location.href="{% url 'blog-full' second_post.pk %}"'>Read More</button>
+          <br>
+          <br>
+        </div>
+      </div>
+      <div class="carousel-item">
+        {% if third_post.blog_header_image %}
+        <img src="{{ third_post.blog_header_image.url }}" class="d-block w-100" alt="...">
+        {% endif %}
+        <div class="carousel-caption d-none d-md-block text-center">
+          <h3>{{ third_post.blog_head| safe }}</h3>
+          <p>{{ third_post.blog_summary| safe }}</p>
+          <br>
+          <button type=button class="btn btn-default" onclick='window.location.href="{% url 'blog-full' third_post.pk %}"'>Read More</button>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<section id="Mission_section">
+<div class=container>
+<div class=Mission id=Mission>
+<h2>Our Mission</h2>
+<p>Ahoy captains! This ship is on the dock and will sail if you oversee this. It brings to you the opportunity to put an end to the carefree environment we all have built. And the building bricks for the new environment are not even as hard as getting a thread into a needle! Well with that poor reference, let me tell you the mission of our ship!</p>
+
+<p>To build a plasticless or plastic free environment, we need to simply reduce the usage of plastic from our lives but at some places it becomes difficult to do so. Once such point is when you buy milk everyday. That one plastic milk bag multiplied by the number of households in your locality equals to a ton of damage, when it is not recycled. And let me tell you, 95% of it is not. That is where we come in. We collect the plastic bags and give them to a recycler. In that way, even when we don't realise we are reusing the plastic, we do reuse it.</p>
+
+<p>Isn't that simple enough? Besides, how much time does it really take to not throw the plastic in the dustbin and save it with you for some time? So, Join hands with us for a better and greener Earth! Let us wave a goodbye to the unnecessary plastic lying around!</p>
+<br>
+<div class=join_us>
+<a href="#">Join Us!</a>
+</div>
+</div>
+</section>
+
+<div class=Team>
+<h2 id=the_Team>The Team </h2>
+<p>Our team is a broad diversity of people who want to fight to save the environment. It includes the donors, the real heroes kind enough to help and donate us plastic to visualize a greener and healthier earth; the collectors, who take the responsibility of collecting the donated plastic in his or her area and providing it to us, the core team, which works hard at the back end to make sure we give you what we promise, a safer place to live.</p>
+<div class=team_button>
+<a href="#">Meet Our Heroes! </a>
+</div>
+</div>
+<br>
+<br>
+{% endblock %}

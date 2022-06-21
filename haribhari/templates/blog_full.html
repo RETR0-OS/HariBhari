@@ -1,0 +1,106 @@
+{% extends "base_new.html" %}
+{% load static %}
+{% block title %}
+Hari Bhari- {{blog.blog_head| safe}}
+{% endblock %}
+{% block content %}
+  <section id="blogs_section">
+    <link rel="stylesheet" href="{% static 'css/blog_details.css' %}">
+    <div class=heading>
+      <h1> {{blog.blog_head| safe}} </h1>
+      <small>Posted on: {{blog.blog_date}}</small>
+    </div>
+    <div class="blog_content text-center">
+      {% if blog.blog_header_image %}
+        <img src="{{blog.blog_header_image.url}}" alt="" class="blog_image">
+      {% endif %}
+      <div class="blog_paragraph">
+        {{blog.blog_content| safe}}
+        <br>
+        <hr>
+        <form class="" action="{% url 'like_blog' blog.pk %}" method="post">
+          {% csrf_token %}
+
+          {% if user.is_authenticated %}
+            {% if liked %}
+              {% if number_of_likes == 1 %}
+                <button type="submit" name="like_blog_id", value="{{blog.id}}", class="btn btn-danger btn-sm like_control"><i class='fa-solid fa-heart fa-2xl'></i></button> - {{ number_of_likes }} Like
+              {% else %}
+                <button type="submit" name="like_blog_id", value="{{blog.id}}", class="btn btn-danger btn-sm like_control"><i class='fa-solid fa-heart fa-2xl'></i></button> - {{ number_of_likes }} Likes
+              {% endif %}
+            {% else %}
+              {% if number_of_likes == 1 %}
+                <button type="submit" name="like_blog_id", value="{{blog.id}}", class="btn btn-primary btn-sm like_control"><i class="fa-regular fa-heart fa-beat fa-2xl"></i></button> - {{ number_of_likes }} Like
+              {% else %}
+                <button type="submit" name="like_blog_id", value="{{blog.id}}", class="btn btn-primary btn-sm like_control"><i class='fa-regular fa-heart fa-beat fa-2xl'></i></button> - {{ number_of_likes }} Likes
+              {% endif %}
+            {% endif %}
+          {% else %}
+            <p>Please <a href="{% url 'login' %}">login</a> to like the blog! It means a lot to us!</p>
+          {% endif %}
+        </form>
+      </div>
+    </div>
+    <br><br>
+      <div class="card mb-3 authors_card">
+        <div class="row g-0">
+          {% if blog.author.profile.user_avatar %}
+            <div class="col-md-4">
+              <img src="{{ blog.author.profile.user_avatar.url }}" class="img-fluid rounded-start" alt="Writer's picture">
+            </div>
+          {% else %}
+            <div class="col-md-4">
+              <img src="{% static 'Images/default_user.png' %}" class="img-fluid rounded-start" alt="Writer's picture">
+            </div>
+          {% endif %}
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class="card-title">{{ blog.author.username }}</h2>
+              <p class="card-text"><small class="text-muted"><a href="{% url 'show_profile' blog.author.profile.id %}">Visit writer's profile</a></small></p>
+              <hr>
+              <p class="card-text">{{ blog.author.profile.user_bio| slice:"0:200" }}...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="comments_section col-sm-10 offset-sm-1" id="commentsSection">
+        <div class="comments_section_header_main">
+          <h2>Comments...</h2>
+        </div>
+        <hr>
+        <br><br>
+        {% if not blog.comments.all %}
+          <h4>Not comments yet....be the first one to <a class="btn-link" href="{% url 'add_comment' blog.pk %}">comment!</a></h4>
+        {% else %}
+          <a class="btn btn-primary" style="font-family: sans-serif" href="{% url 'add_comment' blog.pk %}">Add A Comment!</a>
+          <br><br>
+          {% for comment in blog.comments.all %}
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{comment.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{comment.date}}</h6>
+                <hr>
+                <div class="comment_content">
+                  <p class="card-text comment_content">{{comment.body| safe}}</p>
+                </div>
+              </div>
+            </div>
+            <br><br>
+          {% endfor %}
+          <a class="btn btn-primary" style="font-family: sans-serif" href="{% url 'add_comment' blog.pk %}">Add A Comment!</a>
+          <br><br>
+        {% endif %}
+      </div>
+      <br><br>
+      <div class=join>
+        <button type="button" onclick="window.open('{% url 'register' %}')" class="btn btn-success">Join Us In This Noble Work!</button>
+      </div>
+      <br><br>
+      {% if user.is_authenticated %}
+        {% if user.username == blog.author.username %}
+          <a href="{% url 'update_blog' blog.pk %}">Edit This Blog!</a><br><br>
+          <a href="{% url 'delete_blog' blog.pk %}">Delete This Blog!!</a>
+        {% endif %}
+      {% endif %}
+  </section>
+{% endblock %}

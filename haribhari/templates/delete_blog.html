@@ -1,0 +1,45 @@
+{% extends "base_new.html" %}
+{% load static %}
+
+{% block title %}
+Hari Bhari - Delete Blog
+{% endblock %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    {% if user.username == blog.author.username %}
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Delete Your Blog</h1>
+      <h2>Delete: {{blog.blog_head}}</h2>
+      <div class="new_blog_form form-group">
+        <form method="POST">
+          {% csrf_token %}
+          <!--{{ form.as_p }}-->
+          <strong>This action is irrevertable! Are your sure you wish to delete this post: {{blog.blog_head| safe}}?</strong><br><br>
+          <input type="submit" class="btn btn danger" value="Delete!">
+        </form>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+    {% else %}
+      <br>
+      <br>
+      <h1>You cannot delete this resource!</h1>
+      <br>
+      <br>
+      <br>
+    {% endif %}
+  {% else %}
+    <br>
+    <br>
+    <h1>You are not authorized to access this resource!</h1>
+    <br>
+    <br>
+    <br>
+  {% endif %}
+{% endblock %}

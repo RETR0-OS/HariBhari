@@ -1,0 +1,35 @@
+{% extends "base_new.html" %}
+{% load static %}
+
+{% block title %}
+Hari Bhari - Add Blog Post
+{% endblock %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Add New Blog</h1>
+    <div class="new_blog_form form-group">
+      <form method="POST", enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+        <input type="submit" name="" value="Post">
+      </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+  {% else %}
+    <br>
+    <br>
+    <h1>You are not authorized to access this resource!</h1>
+    <br>
+    <br>
+    <br>
+  {% endif %}
+{% endblock %}

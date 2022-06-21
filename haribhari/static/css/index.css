@@ -1,0 +1,273 @@
+
+.About_Us{
+margin-top:10%;
+}
+
+.About_Us
+{
+background-image: url("../Images/index_img_back.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+}
+
+.blue{
+background-color: rgba(170, 189, 250, 0.8);
+color: white;
+width:100%;
+}
+
+.About_Us h2{
+/*font-family: Arial, sans-serif;*/
+font-size: 250%;
+font-weight: bold;
+}
+
+.About_Us p{
+color:#001f82;
+font-size:180%;
+}
+
+.About_Us a{
+color:#fff;
+}
+
+.col-sm-6 img{
+width:100%;
+margin:20% 0%;
+}
+
+.About_Us h2{
+text-align: center;
+}
+
+.container-fluid1{
+width:90%;
+margin-left:5%;
+}
+
+.arrow-down{
+margin-left:45%;
+width:10%;
+margin-bottom: 15%;
+}
+.arrow-down img{
+width:80%;
+height:auto;
+margin-left:10%;
+}
+
+
+.carousel_heading{
+font-size:750%;
+color:blue;
+text-align:center;
+margin-bottom:8%;
+}
+
+@media (max-width:990px){
+.carousel_heading{
+font-size:350%;
+color:blue;
+text-align:center;
+margin-bottom:8%;
+}
+}
+
+/*.carousel-caption{
+  color:white;
+  font-weight:bold;
+  width:80%;
+  padding-right:20%;
+  text-align:center;
+  max-height:100%;
+}*/
+
+.carousel-caption{
+  font-weight:bold;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.item img{
+margin-left:5%;
+margin-right:5%;
+width:90%;
+}
+
+.carousel-caption h3{
+  font-size:300%;
+}
+
+.carousel-caption p{
+  font-size:200%;
+}
+
+.gyphicon-chevron-right
+{
+color:white;
+}
+
+.carousel{
+width:80%;
+margin-left:10%;
+height:auto;
+margin-bottom:10%;
+z-index:0;
+}
+
+@media (max-width:750px){
+  .carousel-caption{
+    display:none;
+}
+
+.Team .team_button a{
+margin-left:0;
+margin-right:0;
+width: 100%;
+font-size: 70%
+}
+
+.Team .team_button a:hover{
+width:100%;
+margin:0;
+font-size: 70%;
+}
+}
+
+@media (max-width:600px){
+.btn{
+display:none;
+}
+}
+
+.btn{
+font-size:18px;
+color:white;
+padding:12px 22px;
+background-color:black;
+border: 4px solid white;
+}
+
+.btn:hover{
+background-color:#7efa48;
+color:black;
+}
+
+.Mission{
+font-size:170%;
+text-align:center;
+margin-right:20%;
+margin-left:20%;
+margin-top: 150px;
+padding:2%;
+background-color: #d8fabe;
+}
+
+.Mission h2{
+font-size: 250%;
+}
+
+.Mission p{
+font-size: 125%;
+}
+
+@media (max-width: 990px){
+.Mission{
+width:94%;
+margin: 0% 3%;
+background-color:#d8fabe;
+}
+}
+
+.join_us{
+margin: 0;
+padding:0;
+}
+
+.join_us a{
+background-color: black;
+text-decoration:none;
+color: white;
+text-align: center;
+display: block;
+width: 60%;
+margin-right:20%;
+margin-left:20%;
+height:auto;
+}
+
+.join_us a:hover{
+color: black;
+background-color: #61FE54;
+font-size: 115%;
+}
+
+
+.Team{
+font-size:160%;
+text-align:center;
+background-image: url("../Images/team_back.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+margin-right:20%;
+margin-left:20%;
+margin-top:150px;
+}
+
+.Team h2{
+font-size:250%;
+}
+
+.team p{
+font-size:125%;
+}
+
+.Team .team_button{
+margin-left: 15%;
+margin-right: 15%;
+width: 70%;
+font-size: 160%
+}
+
+.team_button{
+margin: 0;
+padding:0;
+}
+
+.team_button a{
+background-color: black;
+text-decoration:none;
+color: white;
+text-align: center;
+display: block;
+width: 60%;
+margin-right:20%;
+margin-left:20%;
+height:auto;
+
+}
+
+.team_button a:hover{
+color: black;
+background-color: #61FE54;
+font-size:115%;
+}
+
+@media (max-width: 990px){
+.Team{
+width:94%;
+margin: 0% 3%;
+}
+}
+
+.carousel-control{
+height:100%;
+color:white;
+}
+
+.fa .fa-chevron-left{
+bottom:50%;
+color:white;
+position:relative
+}

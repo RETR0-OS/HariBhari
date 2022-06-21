@@ -1,0 +1,10 @@
+{% extends "base_new.html" %}
+{% load static %}
+
+{% block title %}
+Hari Bhari - Locked out!
+{% endblock %}
+
+{% block content %}
+<h1>You have been blocked for {{cooloff_time_minutes}} minutes due to exeeding failed login attempts!</h1>
+{% endblock %}

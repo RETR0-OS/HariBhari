@@ -1,0 +1,44 @@
+{% extends "base_new.html" %}
+{% load static %}
+{% block title %}
+Hari Bhari - Edit Your Blog
+{% endblock %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    {% if user.username == blog.author.username %}
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Update Your Blog</h1>
+      <div class="new_blog_form form-group">
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.media }}
+          {{ form.as_p| safe }}
+          <input type="submit" name="" value="Update">
+        </form>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      {% else %}
+        <br>
+        <br>
+        <h1>You cannot edit this resource!</h1>
+        <br>
+        <br>
+        <br>
+    {% endif %}
+  {% else %}
+    <br>
+    <br>
+    <h1>You are not authorized to access this resource!</h1>
+    <br>
+    <br>
+    <br>
+  {% endif %}
+{% endblock %}

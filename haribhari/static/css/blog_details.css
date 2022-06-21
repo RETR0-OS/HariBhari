@@ -1,0 +1,147 @@
+.heading h1{
+  text-align: center;
+  font-size: 340%;
+  text-decoration: underline;
+}
+
+.heading{
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.blog_image{
+  width:80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  height:auto;
+  border-radius: 15px;
+}
+
+.blog_paragraph{
+  width: 80%;
+  margin-right: auto;
+  margin-left: 10%;
+  background-color: white;
+  margin-top: 5%;
+  font-size: 240%;
+  padding: 5% 5%;
+  text-align:left;
+  border-radius: 20px;
+}
+
+.join{
+  text-align: center;
+}
+
+.join button{
+  font-size: 350%;
+  padding: 3% 3%;
+}
+
+.authors_card{
+  width: 80%;
+  margin-left: 10%;
+  margin-right: auto;
+}
+
+.like_control{
+  padding: 1%;
+}
+
+@media (min-width:768px){
+
+  .heading h1{
+    font-size: 200px;
+  }
+  .heading small{
+    font-size: 30px
+  }
+  .authors_card .card-title{
+    font-size: 110px !important;
+  }
+  .authors_card .card-body p{
+    font-size: 35px !important;
+  }
+  .comments_section_header_main h2{
+    font-size: 100px;
+  }
+  .comments_section .card .card-title{
+    font-size: 35px;
+  }
+  .comments_section .card .comment_content{
+    background-color: #f7f0f0;
+    padding: 1%;
+    box-sizing: border-box;
+    font-size: 25px;
+  }
+  .authors_card{
+    margin-bottom: 5% !important;
+  }
+  .authors_card h2{
+    padding: 0;
+    margin: 0;
+  }
+  .authors_card hr{
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width:768px){
+  .heading h1{
+    font-size: 80px;
+    width: inherit;
+  }
+  .heading small{
+    font-size: 25px;
+    width: inherit;
+  }
+  .blog_image{
+    width:90%;
+    margin: 5% 5%;
+  }
+  .blog_paragraph{
+    width:90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    font-size: 20px;
+  }
+  .join{
+    width:100% !important;
+    text-align: center;
+  }
+  .join button{
+    width:90% !important;
+    margin-left: 0% !important;
+    margin-right: auto;
+    font-family: serif;
+    font-size: 150%;
+  }
+  .authors_card{
+    font-size: 230%;
+  }
+  .authors_card .card-title{
+    font-size: 500% !important;
+  }
+  .authors_card .card-text{
+    font-size: 110%;
+  }
+  .comments_section{
+    margin-top: 10%;
+    width:90%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  .comments_section h2{
+    font-size: 70px;
+  }
+  .comments_section .card .comment_content{
+    background-color: #f7f0f0;
+    padding: 1%;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+  .like_control{
+    padding: 3%;
+  }
+}

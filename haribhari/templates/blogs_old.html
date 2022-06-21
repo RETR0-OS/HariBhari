@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blogs</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/blogs.css' %}">
+  <link rel="icon" type="image/x-icon" href="{% static 'Images/Logo-circle.png' %}">
+</head>
+<body>
+  <nav class="navbar navbar-expand-xl navbar-inverse fixed-top">
+    <div clss="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="{% static 'Images/Logo.jpeg'%}"></a>
+        </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="/">Home</a></li>
+          <li><a href="/#About_Us">About Us</a></li>
+          <li><a href="/#Mission">Our Mission</a></li>
+          <li><a href="">The Team</a></li>
+          <li class="active"><a href="">Blogs</a></li>
+          <li><a href="#">Connect With Us</a></li>
+          <li><a href="#">Join Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <hr class=line height=1>
+
+  <div class=my_content>
+    <div class=head>
+      <h1> Blogs</h1>
+    </div>
+    <div class=container-fluid>
+      <div class=row>
+
+          <div class=col-sm-4>
+            <h3> The Writers</h3>
+            {% for writer in get_writers%}
+              <div class=writers_col>
+                <img src="{{ writer.writer_Image.url }}"> <p><br>{{writer.writer_content}}</p>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class=col-sm-7>
+            {% for blog in get_blogs%}
+                <div class="blog-item container-fluid">
+                    <h3> {{blog.blog_head}}</h3>
+                    <img src={{blog.blog_image.url}}><p><br>{{blog.blog_summary}} <a href="">Read more!</a></p>
+                </div>
+                <br>
+                <br>
+                <br>
+            {% endfor%}
+          </div>
+      </div>
+    </div>
+
+</body>
+</html>

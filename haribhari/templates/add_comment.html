@@ -1,0 +1,34 @@
+{% extends "base_new.html" %}
+{% load static %}
+
+{% block title %}
+Hari Bhari - Add Blog Post
+{% endblock %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Add New Comment!</h1>
+    <div class="new_blog_form form-group">
+      <form method="POST", enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="" value="Add Comment">
+      </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+  {% else %}
+    <br>
+    <br>
+    <h1>Please <a href="{% url 'login' %}">login</a> to comment on the blog! It means a lot to us!</h1>
+    <br>
+    <br>
+    <br>
+  {% endif %}
+{% endblock %}

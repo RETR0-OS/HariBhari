@@ -1,0 +1,126 @@
+html{
+background-color:#d8fabe;
+}
+
+body{
+background-color:#d8fabe;
+font-family:"Cursive";
+}
+
+.user_avatar{
+  border-radius: 50%;
+}
+
+@media (max-width:990px){
+  *{
+    font-size: 95%;
+  }
+  .navbar .navbar-nav{
+    text-align: center;
+  }
+  .navbar .dropdown-menu{
+    text-align:center;
+  }
+  .navbar .dropdown-menu a{
+    border-radius: 15px;
+  }
+}
+
+.navbar-brand img
+{
+width: 70px;
+height: auto;
+}
+
+.navbar{
+z-index:2;
+font-weight:bold;
+}
+
+.active{
+  transition: 1s;
+  background-color: white !important;
+  border-radius: 10px;
+}
+
+.active a{
+  color: black !important;
+}
+
+
+.navbar-nav li a{
+  font-size: 140%;
+  font-family: Arial, sans-serif;
+}
+
+.navbar-nav li{
+  margin: auto 30px;
+}
+
+.dropdown-menu{
+  background-color: #212529 !important;
+}
+
+.dropdown-item{
+  color: #96989A !important;
+}
+
+.my_content {
+  padding-top: 60px;
+}
+
+.line{
+background-color:black;
+height: 2px;
+padding:0;
+margin:0;
+}
+
+footer{
+width:100%;
+background-color:black;
+color:white;
+padding:3%;
+}
+
+@media (max-width: 768px) {
+  footer .fa{
+    font-size:200%;
+    margin-left:3%;
+  }
+  footer .fa:hover{
+    color: blue;
+    font-size: 165%;
+    background-color: white;
+    padding: 3px;
+    transition: 0.7s;
+  }
+  footer{
+    padding: 3% 1%;
+  }
+}
+
+
+.fa{
+  font-size:300%;
+  color:white;
+  padding:0;
+  margin-left:8%;
+  text-decoration: none;
+}
+
+.fa:hover{
+color:white;
+text-decoration: none;
+font-size:330%;
+}
+
+.company_mine{
+text-align:center;
+color:white;
+font-size:90%;
+margin-top:10px;
+margin-bottom:0;
+padding:0;
+font-family: Arial, sans-serif;
+}
