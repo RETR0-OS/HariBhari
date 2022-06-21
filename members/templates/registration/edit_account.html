@@ -1,0 +1,30 @@
+{% extends "base_new.html" %}
+{% load static %}
+
+{% block title %}
+Hari Bhari - Edit Profile
+{% endblock %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Update Your Account Information </h1>
+    <div class="new_blog_form form-group">
+      <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="" value="Update!">
+      </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  {% else %}
+    <p>You are not logged in and thus do not have an account! Please <a href="{% url 'login' %}">Login</a> to continue or <a href="{% url 'register' %}">Register!</a></p>
+  {% endif %}
+{% endblock %}

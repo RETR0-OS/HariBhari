@@ -1,0 +1,30 @@
+{% extends "base_new.html" %}
+{% load static %}
+
+{% block title %}
+Hari Bhari - Register
+{% endblock %}
+
+{% block content %}
+  {% if not user.is_authenticated %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Register</h1>
+    <div class="new_blog_form form-group">
+      <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="" value="Register">
+      </form>
+    </div>
+    <h3>Already have an account?<a href="{% url 'login' %}"> Login!</a></h3>
+    <br>
+    <br>
+    <br>
+    <br>
+  {% else %}
+    <p>Please <a href="{% url 'logout' %}">logout</a> to register new user!</p>
+  {% endif %}
+{% endblock %}
